@@ -6,7 +6,7 @@ class VcardParser {
   final VCARD_FIELD_SEPARATORS = [';', '='];
   final VCARD_TAG_SEPARATOR = '\n';
   final VCARD_TAG_KE_VALUE_SEPARATOR = ':';
-  final VCARD_TAG_VALUE_IGONE_SEPARATOR = ';';
+  final List<String> VCARD_TAG_VALUE_IGONE_SEPARATOR = [',', ''];
   final VCARD_TAGS = [
     'ADR',
     'AGENT',
@@ -65,7 +65,7 @@ class VcardParser {
       }
 
       key = tagAndValue[0].trim();
-      value = tagAndValue[1].trim().replaceAll(VCARD_TAG_VALUE_IGONE_SEPARATOR, '');
+      value = tagAndValue[1].trim().replaceAll(VCARD_TAG_VALUE_IGONE_SEPARATOR[0], VCARD_TAG_VALUE_IGONE_SEPARATOR[1]);
 
       // 若复杂字段，则需进一步解析数据
       if (key.contains(VCARD_FIELD_SEPARATORS[0])) {
@@ -120,7 +120,7 @@ class VcardParser {
 
         // item的key和value保存在数组，因此其元素数量为2
         if (items.length == 2) {
-          field = {'name': items.elementAt(0), 'value': items.elementAt(1).replaceAll(VCARD_TAG_VALUE_IGONE_SEPARATOR, "")};
+          field = {'name': items.elementAt(0), 'value': items.elementAt(1).replaceAll(VCARD_TAG_VALUE_IGONE_SEPARATOR[0], VCARD_TAG_VALUE_IGONE_SEPARATOR[1])};
         }
       });
       return field;
