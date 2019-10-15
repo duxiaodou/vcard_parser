@@ -1,7 +1,7 @@
 name: vcard_parser
-description: A new Flutter package project.
+description: VCard(3.0) parser
 version: 0.0.1
-author: duxiaodou
+author: duxiaodou <badtudou@gmail.com>
 homepage: http://github.com/duxiaodou/vcard_parser
 
 environment:
