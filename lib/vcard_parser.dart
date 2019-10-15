@@ -6,7 +6,7 @@ class VcardParser {
   final VCARD_FIELD_SEPARATORS = [';', '='];
   final VCARD_TAG_SEPARATOR = '\n';
   final VCARD_TAG_KE_VALUE_SEPARATOR = ':';
-  final List<String> VCARD_TAG_VALUE_IGONE_SEPARATOR = [',', ''];
+  final List<String> VCARD_TAG_VALUE_IGONE_SEPARATOR = [',', ' '];
   final VCARD_TAGS = [
     'ADR',
     'AGENT',
