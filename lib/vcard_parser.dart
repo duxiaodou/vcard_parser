@@ -64,7 +64,7 @@ class VcardParser {
       }
 
       key = tagAndValue[0].trim();
-      value = tagAndValue[1].trim();
+      value = tagAndValue[1].trim().replaceAll(";", '');
 
       // 若复杂字段，则需进一步解析数据
       if (key.contains(VCARD_FIELD_SEPARATORS[0])) {
